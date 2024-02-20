@@ -1,6 +1,10 @@
 all : up
 
-up : 
+check_dir :
+	mkdir -p ~/data/wordpress
+	mkdir -p ~/data/mariadb
+
+up : check_dir
 	@docker-compose -f ./srcs/docker-compose.yaml up -d
 
 down : 
